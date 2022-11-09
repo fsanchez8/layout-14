@@ -1,0 +1,60 @@
+<div class="layout-topbar">
+
+    <a routerLink="/" *ngIf="appMain.isHorizontal() && !appMain.isMobile()" class="topbar-logo">
+        <img alt="logo" src="assets/layout/images/logo-slim.png" />
+        <span class="app-name">SERENITY</span>
+    </a>
+
+    <img alt="logo" src="assets/layout/images/logo-slim.png" class="mobile-logo"/>
+
+    <a href="#" class="menu-btn" (click)="appMain.onMenuButtonClick($event)">
+        <i class="pi pi-bars"></i>
+    </a>
+
+    <a href="#" class="topbar-menu-btn" (click)="appMain.onTopbarMobileMenuButtonClick($event)">
+        <i class="pi pi-user"></i>
+    </a>
+
+    <div class="layout-topbar-menu-wrapper">
+        <ul class="topbar-menu fadeInDown" [ngClass]="{'topbar-menu-active': appMain.topbarMenuActive}" (click)="appMain.onTopbarMenuClick($event)">
+            <li #profile class="profile-item" [ngClass]="{'active-topmenuitem': appMain.activeTopbarItem === profile}" (click)="appMain.onTopbarRootItemClick($event, profile)">
+                <a href="#">
+                    <span class="profile-image-wrapper">
+                        <img src="assets/layout/images/avatar.png"/>
+                    </span>
+                    <div class="profile">
+                        <span class="topbar-item-name profile-name text-300">FABIO ALBERTO SÁNCHEZ SÁNCHEZ</span>
+                        <span class="topbar-item-name profile-name text-400"><small>DIRECCIÓN DE INFORMATICA</small></span>
+                        <span class="topbar-item-name profile-name text-500"><small>21:25 2022-11-9</small></span>
+                    </div>
+                </a>
+                <ul class="fadeInDown">
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="pi pi-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="pi pi-lock"></i>
+                            <span>Privacy</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="pi pi-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="pi pi-power-off"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

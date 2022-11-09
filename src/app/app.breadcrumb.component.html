@@ -1,0 +1,20 @@
+<div class="layout-breadcrumb">
+    <ul>
+        <li><a routerLink="" (click)="devolver()"><i class="pi pi-arrow-left"></i></a></li>
+        <li></li>
+        <!-- <ng-template ngFor let-item let-last="last" [ngForOf]="items">
+            <li>
+                <a [routerLink]="item.routerLink" *ngIf="item.routerLink">{{item.label}}</a>
+                <ng-container *ngIf="!item.routerLink">{{item.label}}</ng-container>
+            </li>
+            <li *ngIf="!last">/</li>
+        </ng-template> -->
+    </ul>
+
+    <div class="layout-breadcrumb-options">
+
+        <a  (click)="adelante()" title="Logout">
+            <i class="pi pi-arrow-right"></i>
+        </a>
+    </div>
+</div>
